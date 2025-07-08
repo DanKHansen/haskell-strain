@@ -1,7 +1,7 @@
 module Strain (keep, discard) where
 
 discard :: (a -> Bool) -> [a] -> [a]
-discard p xs = [x | x <- xs, not (p x)]
+discard = filter . (not .)
 
 keep :: (a -> Bool) -> [a] -> [a]
-keep p xs = [x | x <- xs, p x]
+keep = filter
